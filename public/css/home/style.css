@@ -1,0 +1,1581 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    /*tidak bisa scroll kanan*/
+
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    background: #262626;
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color: black;
+    height: 70px;
+    align-items: center;
+    z-index: 6;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 27%;
+    justify-content: space-between;
+    /* background-color: tomato; */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'M PLUS 1p', sans-serif;
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+a.active,
+a:hover {
+    color: #35f24e;
+}
+
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    /* color: black; */
+}
+
+/* -------------------------------------------------------------- */
+/* Menu toggle */
+.menu-toggle {
+    display: none;
+    /*display normal*/
+    align-items: center;
+    flex-direction: column;
+    height: 15px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 6;
+
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 42px;
+    top: -3px;
+    height: 20px;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* Responsive Breakout */
+
+/* Ukuran tablet*/
+@media screen and (max-width: 800px) {
+    nav ul {
+        width: 40%;
+    }
+}
+
+/* Ukuran mobile */
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        /*memulai toggle*/
+        right: 0;
+        top: 0;
+        width: 60%;
+        /*lebar slidebar*/
+        height: 100vh;
+        /* Viewport Heigh / Tinggi layar yang kita lihat*/
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #262626;
+        z-index: -1;
+        /*umpetin slide bar dari navbar*/
+        transform: translateX(100%);
+        /*awal slideBar ngumpet ke kanan dulu*/
+        /*--> LANJUT tambahakn di Body*/
+        transition: all 1s;
+        opacity: 0;
+        /* position: fixed; */
+    }
+
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+        /*jika UL terkenal kelas slide/navigasi BALIKIN lagi ke posisi  awal (0)*/
+        z-index: 5;
+    }
+}
+
+input[type="cari"] {
+    width: 208px;
+    height: 9px;
+    outline: none;
+    /* border: 1px solid #fff; */
+    border: none;
+    padding: 6px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    position: absolute;
+    float: left;
+    left: 190px;
+    top: 24px;
+}
+
+.searching {
+    width: 40%;
+    height: 9px;
+    outline: none;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+}
+
+
+.iconSearch {
+    display: flex;
+    width: 15px;
+    position: relative;
+    float: left;
+    left: 1px;
+    top: -2px;
+}
+
+.searching:hover {
+    border: 1px solid #35f24e;
+}
+
+.containerCari {
+    width: 30%;
+    height: 100%;
+    /* background: yellow; */
+    position: relative;
+    float: right;
+    /* right: -118px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerLogo {
+    width: 30%;
+    height: 100%;
+    /* background: rgb(255, 255, 255); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    .containerLogo {
+        width: 100%;
+        position: relative;
+        left: -40px;
+    }
+}
+
+/* -- -------------------- ISI -------------------- -- */
+main {
+    width: 100%;
+    height: 500vh;
+    background-color: #111;
+}
+
+/* .isi {
+    width: 100%;
+    height: 100vh;
+} */
+
+.containerBaner {
+    width: 100%;
+    height: 19.5%;
+    background-color: white;
+}
+
+.gambarBaner {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/home/baner.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+
+.opacit {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.kataFreelance {
+    width: 100%;
+    height: 5%;
+    /* background-color: burlywood; */
+    position: relative;
+    top: 174px;
+
+    /* Font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 7px;
+}
+
+.kataJudul {
+    width: 100%;
+    height: 15%;
+    /* background-color: rgb(152, 180, 50); */
+    position: relative;
+    top: 270px;
+
+    /* Font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    font-family: "Alata", Sans-serif;
+    font-style: italic;
+    letter-spacing: 3.3px;
+    line-height: 0.9em;
+}
+
+.containerButton {
+    width: 100%;
+    height: 8%;
+    /* background-color: rgb(50, 128, 180); */
+    position: relative;
+    top: 400px;
+}
+
+.kirivis {
+    width: 46%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    /* background-color: yellowgreen; */
+}
+
+.containerVisiMisi {
+    width: 8%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    /* background-color: rgb(255, 104, 104); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonVisi {
+    width: 100%;
+    height: 60%;
+    background-color: #61ce70;
+    position: relative;
+    border-radius: 7px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#visiMisi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.kananvis {
+    width: 46%;
+    height: 100%;
+    position: relative;
+    float: right;
+    /* background-color: yellowgreen; */
+}
+
+.containerJasa {
+    width: 100%;
+    height: 9%;
+    background-color: #161616;
+}
+
+.atasjasa {
+    width: 100%;
+    height: 4.5%;
+    background-color: #161616;
+}
+
+.containerJudulJasa {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 900;
+}
+
+/* #judulJasa {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 2px;
+    color: #0e0e0e;
+} */
+
+.bawahjasa {
+    width: 100%;
+    height: 1%;
+    background-color: #161616;
+}
+
+.kiriJasa {
+    width: 15%;
+    height: 100%;
+    /* background-color: #f5f5f5; */
+    position: relative;
+    float: left;
+}
+
+.tengahJasa {
+    width: 70%;
+    height: 100%;
+    background-color: #161616;
+    position: relative;
+    float: left;
+    left: 0%;
+}
+
+.containerJasaKiri {
+    width: 33.3%;
+    height: 100%;
+    background-color: #52aa56;
+    position: relative;
+    float: left;
+    left: -20px;
+    border-radius: 15px;
+}
+
+/* CODING */
+.containerJasaKiriLingkaran {
+    width: 50%;
+    height: 50%;
+    background-color: #161616;
+    position: relative;
+    left: 25%;
+    top: 20%;
+    border-radius: 15px;
+
+}
+
+
+#code {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 60px;
+    /* position: relative;
+    left: 25%;
+    top: 20%;
+    border-radius: 50%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotate(8deg); */
+}
+
+#coding {
+    width: 100;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    color: #ffffff;
+    /* background-color: #7A7A7A; */
+    position: relative;
+    top: 114px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+/* VEKTOR */
+.containerJasaTengah {
+    width: 33.3%;
+    height: 100%;
+    /* background-color: #bfd8bf; */
+    background-color: #52aa56;
+    position: relative;
+    float: left;
+    left: 0;
+    border-radius: 15px;
+}
+
+.containerJasaTengahLingkaran {
+    width: 50%;
+    height: 50%;
+    background-color: #161616;
+    position: relative;
+    left: 25%;
+    top: 20%;
+    border-radius: 15px;
+
+}
+
+
+#vektor {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 60px;
+    /* position: relative;
+    left: 25%;
+    top: 20%;
+    border-radius: 50%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotate(8deg); */
+}
+
+#vektoring {
+    width: 100;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    color: #ffffff;
+    /* background-color: #7A7A7A; */
+    position: relative;
+    top: 114px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+/* Mixing */
+.containerJasaKanan {
+    width: 33.3%;
+    height: 100%;
+    background-color: #52aa56;
+    position: relative;
+    float: right;
+    right: -20px;
+    border-radius: 15px;
+}
+
+.containerJasaKananLingkaran {
+    width: 50%;
+    height: 50%;
+    background-color: #161616;
+    position: relative;
+    left: 25%;
+    top: 20%;
+    border-radius: 15px;
+
+}
+
+
+#music {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 60px;
+    /* position: relative;
+    left: 25%;
+    top: 20%;
+    border-radius: 50%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotate(8deg); */
+}
+
+#musician {
+    width: 100;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    color: #ffffff;
+    /* background-color: #7A7A7A; */
+    position: relative;
+    top: 114px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+.kananJasa {
+    width: 15%;
+    height: 100%;
+    /* background-color: #f5f5f5; */
+    position: relative;
+    float: right;
+}
+
+/* IKLANN */
+#part1 {
+    width: 100%;
+    height: 13%;
+}
+
+.iklan1 {
+    width: 100%;
+    height: 100%;
+    /* background-color: #35f24e; */
+    /* z-index: 1; */
+
+}
+
+.darkpart1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-size: 25px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.tambahan1 {
+    width: 100%;
+    height: 30%;
+    /* background-color: antiquewhite; */
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -100px; */
+    position: relative;
+    top: -10px;
+}
+
+#iconDown {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -190px;
+
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.below {
+    width: 100%;
+    height: 30%;
+    /* background-color: antiquewhite; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -202px;
+
+    font-size: 17px;
+    font-family: monospace;
+    color: white;
+
+    letter-spacing: 3px;
+}
+
+.gambarIklan1 {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/home/ik1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* IKLANN 2*/
+#part2 {
+    width: 100%;
+    height: 7%;
+}
+
+.iklan2 {
+    width: 100%;
+    height: 100%;
+    background-color: #161616;
+    /* z-index: 1; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #61ce70;
+}
+
+.gambarIklan2 {
+    text-transform: uppercase;
+}
+
+
+/*-------- JOB 3--------*/
+/* ----------A----------*/
+#jobA {
+    width: 100%;
+    height: 7.5%;
+
+}
+
+.iklanA {
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.kiriJobA {
+    width: 15%;
+    height: 100%;
+    background-color: #262626;
+    position: relative;
+    float: left;
+}
+
+.tengahJobA {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    /* background-color: #262626; */
+    background-color: #262626;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-kiri-jobA {
+    width: 33%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.logo1 {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo1 {
+    border-radius: 50%;
+
+}
+
+.container-judulA {
+    width: 100%;
+    height: 30%;
+    background-color: #262626;
+}
+
+.judulA {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.kananJobX {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-color: #262626;
+}
+
+/* ----------B1----------*/
+
+.container-tengah-jobB1 {
+    width: 33%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.logo2 {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo2 {
+    border-radius: 50%;
+
+}
+
+.container-judulB1 {
+    width: 100%;
+    height: 30%;
+    background-color: #262626;
+}
+
+.judulB1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* ----------C1----------*/
+
+.container-kanan-jobC1 {
+    width: 33%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.logo3 {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo3 {
+    border-radius: 50%;
+
+}
+
+.container-judulC1 {
+    width: 100%;
+    height: 30%;
+    background-color: #262626;
+}
+
+.judulC1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* ----------------------------------------------------------------- */
+/*-------- JOB 4--------*/
+/* ----------B----------*/
+#jobB {
+    width: 100%;
+    height: 7.5%;
+
+}
+
+.iklanB {
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.kiriJobB {
+    width: 15%;
+    height: 100%;
+    background-color: #262626;
+    position: relative;
+    float: left;
+}
+
+.tengahJobB {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    /* background-color: #262626; */
+    background-color: #262626;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-kiri-jobB {
+    width: 33%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.logo4 {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo4 {
+    border-radius: 50%;
+
+}
+
+.container-judulB {
+    width: 100%;
+    height: 30%;
+    background-color: #262626;
+}
+
+.judulB {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.kananJobX {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-color: #262626;
+}
+
+/* ----------B1----------*/
+
+.container-tengah-jobC1 {
+    width: 33%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.logo5 {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo5 {
+    border-radius: 50%;
+
+}
+
+.container-judulC1 {
+    width: 100%;
+    height: 30%;
+    background-color: #262626;
+}
+
+.judulC1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* ----------C1----------*/
+
+.container-kanan-jobD1 {
+    width: 33%;
+    height: 100%;
+    background-color: #262626;
+}
+
+.logo6 {
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo6 {
+    border-radius: 50%;
+
+}
+
+.container-judulD1 {
+    width: 100%;
+    height: 30%;
+    background-color: #262626;
+}
+
+.judulD1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#partner {
+    width: 100%;
+    height: 15%;
+    /* background-color: white; */
+}
+
+.containerpartner {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.kiri-partner {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: white;
+}
+
+.tengah-partner {
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    float: left;
+    left: 0%;
+}
+
+.con-judul-partner {
+    width: 100%;
+    height: 40%;
+    background-color: white;
+}
+
+.partnerjudul {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 25px;
+    letter-spacing: 4px;
+    font-style: italic;
+}
+
+.container-gambar-partner1 {
+    width: 33.3%;
+    height: 60%;
+    position: relative;
+    float: left;
+    /* background-color: violet; */
+}
+
+.gambar-partner1 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fluid {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.container-gambar-partner2 {
+    width: 33.3%;
+    height: 60%;
+    position: relative;
+    float: left;
+    left: 0%;
+    /* background-color: violet; */
+}
+
+.gambar-partner2 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-gambar-partner3 {
+    width: 33.3%;
+    height: 60%;
+    position: relative;
+    float: right;
+    /* background-color: violet; */
+}
+
+.gambar-partner3 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kanan-partner {
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    float: right;
+}
+
+#maps {
+    width: 100%;
+    height: 16%;
+
+}
+
+.last-baner {
+    width: 100%;
+    height: 100%;
+    background-color: turquoise;
+    background-size: cover;
+
+    background-image: url(/img/home/pantai.jpg);
+    background-attachment: fixed;
+}
+
+.dark-mode {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containermaps {
+    width: 80%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#maps2 {
+    width: 1000px;
+}
+
+.gambar-partner1 {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* -- -------------------- FOOTER -------------------- -- */
+footer {
+    width: 100%;
+    height: 40vh;
+    /* border: 2px solid #35f24e; */
+}
+
+.isiContentFooter {
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+}
+
+/* KIRI FOOTER */
+.kiriFooter {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #111;
+}
+
+/* TENGAH FOOTER */
+.tengahFooter {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #111;
+}
+
+/* Populer */
+.containerPopulerFooter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #111;
+    /* border: 1px solid #5eff00; */
+}
+
+.containerPopuler {
+    width: 100%;
+    height: 20%;
+    /* background-color: #295ef0; */
+    position: relative;
+    top: 45px;
+}
+
+.populer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+    color: white;
+}
+
+.pop1 {
+    width: 100%;
+    height: 250%;
+    /* background-color: rgb(87, 182, 87); */
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+}
+
+.pop2 {
+    width: 80%;
+    height: 100%;
+
+    color: white;
+    font-size: 12px;
+    /* background-color: blue; */
+}
+
+.populerPost {
+    list-style: none;
+}
+
+
+#p5 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    margin-bottom: 25px;
+}
+
+#p6 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    margin-bottom: 25px;
+}
+
+#p7 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    margin-bottom: 25px;
+}
+
+/* Contact */
+.containerContactFooter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #111;
+    /* border: 1px solid #ffffff; */
+}
+
+.containerContact {
+    width: 100%;
+    height: 20%;
+    /* background-color: #295ef0; */
+    position: relative;
+    top: 45px;
+}
+
+.contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+    color: white;
+}
+
+.con1 {
+    width: 100%;
+    height: 250%;
+    /* background-color: rgb(87, 182, 87); */
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+}
+
+.con2 {
+    width: 95%;
+    height: 100%;
+
+    color: white;
+    font-size: 12px;
+    /* background-color: blue; */
+}
+
+.contactA {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    /* border: 1px solid #ffffff; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contactB {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    /* border: 1px solid #ffffff; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contactC {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    /* border: 1px solid #ffffff; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#p3 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    float: left;
+    left: 50px;
+    color: #7A7A7A;
+}
+
+#call {
+    font-size: 14px;
+    position: relative;
+    float: left;
+    left: 15px;
+    color: #bcbcbc;
+}
+
+#p4 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    position: relative;
+    float: left;
+    left: 50px;
+}
+
+#latter {
+    font-size: 14px;
+    position: relative;
+    float: left;
+    left: 15px;
+    color: #bcbcbc;
+    ;
+}
+
+#p45 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    position: relative;
+    float: left;
+    left: 50px;
+}
+
+#clock {
+    font-size: 14px;
+    position: relative;
+    float: left;
+    left: 15px;
+    color: #bcbcbc;
+    ;
+}
+
+
+/* About */
+.containerAboutFooter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #111;
+    /* border: 1px solid #ff2e2e; */
+}
+
+.containerWhy {
+    width: 100%;
+    height: 20%;
+    /* background-color: #295ef0; */
+    position: relative;
+    top: 45px;
+}
+
+.why {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+    color: white;
+}
+
+.why1 {
+    width: 100%;
+    height: 250%;
+    /* background-color: rgb(87, 182, 87); */
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+}
+
+.why2 {
+    width: 80%;
+    height: 100%;
+
+    color: #7A7A7A;
+    font-size: 12px;
+    /* background-color: blue; */
+}
+
+#p1 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#p2 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* LOGO FOOTER */
+.containerLogoFooter {
+    width: 24%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    left: 75.5%;
+    background-color: #111;
+    /* border: 1px solid #0602ff; */
+}
+
+.logFot {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 75px
+}
+
+/* KANAN FOOTER */
+.kananFooter {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-color: #111;
+}
+
+.isiSosmedFooter {
+    width: 100%;
+    height: 15%;
+    /* background-color: #0e0e0e; */
+    /* border: 2px solid #ffffff; */
+}
+
+/* ########### SOSMED ########### */
+
+/* Kiri Footer */
+.containerKiriSosmedFooter {
+    width: 35%;
+    height: 100%;
+    background-color: #0e0e0e;
+    position: relative;
+    float: left;
+}
+
+/* Tengah Footer*/
+.containerTengahSosmedFooter {
+    width: 30%;
+    height: 100%;
+    background-color: #0e0e0e;
+    position: relative;
+    float: left;
+    left: 0%;
+}
+
+.sosmedDalam {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid rgb(0, 238, 255); */
+}
+
+.sosmed {
+    display: flex;
+    width: 100%;
+    height: 5.5vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Font */
+    letter-spacing: 24px;
+    font-size: 19px;
+    color: white;
+    list-style: none;
+    left: 18px;
+}
+
+/* Kanan Footer*/
+.containerKananSosmedFooter {
+    width: 35%;
+    height: 100%;
+    background-color: #0e0e0e;
+    position: relative;
+    float: right;
+}
+
+#aa,
+#bb,
+#cc,
+#dd {
+    color: white;
+}

@@ -1,0 +1,992 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    /*tidak bisa scroll kanan*/
+
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    background: #262626;
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color: black;
+    height: 70px;
+    align-items: center;
+    z-index: 6;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 27%;
+    justify-content: space-between;
+    /* background-color: tomato; */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'M PLUS 1p', sans-serif;
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+a.active,
+a:hover {
+    color: #35f24e;
+}
+
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    /* color: black; */
+}
+
+/* -------------------------------------------------------------- */
+/* Menu toggle */
+.menu-toggle {
+    display: none;
+    /*display normal*/
+    align-items: center;
+    flex-direction: column;
+    height: 15px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 6;
+
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 42px;
+    top: -3px;
+    height: 20px;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* Responsive Breakout */
+
+/* Ukuran tablet*/
+@media screen and (max-width: 800px) {
+    nav ul {
+        width: 40%;
+    }
+}
+
+/* Ukuran mobile */
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        /*memulai toggle*/
+        right: 0;
+        top: 0;
+        width: 60%;
+        /*lebar slidebar*/
+        height: 100vh;
+        /* Viewport Heigh / Tinggi layar yang kita lihat*/
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #262626;
+        z-index: -1;
+        /*umpetin slide bar dari navbar*/
+        transform: translateX(100%);
+        /*awal slideBar ngumpet ke kanan dulu*/
+        /*--> LANJUT tambahakn di Body*/
+        transition: all 1s;
+        opacity: 0;
+        /* position: fixed; */
+    }
+
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+        /*jika UL terkenal kelas slide/navigasi BALIKIN lagi ke posisi  awal (0)*/
+        z-index: 5;
+    }
+}
+
+input[type="cari"] {
+    width: 208px;
+    height: 9px;
+    outline: none;
+    /* border: 1px solid #fff; */
+    border: none;
+    padding: 6px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    position: absolute;
+    float: left;
+    left: 190px;
+    top: 24px;
+}
+
+.searching {
+    width: 40%;
+    height: 9px;
+    outline: none;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+}
+
+
+.iconSearch {
+    display: flex;
+    width: 15px;
+    position: relative;
+    float: left;
+    left: 1px;
+    top: -2px;
+}
+
+.searching:hover {
+    border: 1px solid #35f24e;
+}
+
+.containerCari {
+    width: 30%;
+    height: 100%;
+    /* background: yellow; */
+    position: relative;
+    float: right;
+    /* right: -118px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerLogo {
+    width: 30%;
+    height: 100%;
+    /* background: rgb(255, 255, 255); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    .containerLogo {
+        width: 100%;
+        position: relative;
+        left: -40px;
+    }
+}
+
+/* -- -------------------- ISI -------------------- -- */
+main {
+    width: 100%;
+    height: 90vh;
+    background-color: #161616;
+}
+
+#about {
+    width: 100%;
+    height: 100%;
+}
+
+.contain-atas-kiri {
+    width: 17%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #161616;
+}
+
+.container-atas-tengah {
+    width: 66%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #262626;
+}
+
+.container-top {
+    width: 100%;
+    height: 44%;
+    background-color: #161616;
+}
+
+.atas1 {
+    width: 100%;
+    height: 20%;
+    background-color: #161616;
+}
+
+.kata12 {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #161616;
+
+    position: relative;
+    top: 74px;
+    font-size: 13px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Alata", Sans-serif;
+
+    letter-spacing: 3px;
+}
+
+
+.atas2 {
+    width: 100%;
+    height: 20%;
+    background-color: #161616;
+    font-family: "Alata", Sans-serif;
+}
+
+.kata13 {
+    width: 100%;
+    height: 100%;
+    color: #61CE70;
+    background-color: #161616;
+
+    position: relative;
+    top: 74px;
+    font-size: 52px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Alata", Sans-serif;
+
+    font-weight: 100;
+}
+
+.atas3 {
+    width: 100%;
+    height: 20%;
+    background-color: #161616;
+}
+
+.kata14 {
+    width: 100%;
+    height: 100%;
+    color: rgb(151, 151, 151);
+    background-color: #161616;
+
+    position: relative;
+    top: 86px;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+
+    letter-spacing: 1px;
+}
+
+#sosmed-anggota {
+    width: 100%;
+    height: 65%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ####### UBAY ####### */
+.container-kiri-anggota1 {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+}
+
+.gambar-ubay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -60px;
+
+}
+
+#ubay {
+    border-radius: 50%;
+}
+
+.nama1 {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 17px;
+}
+
+.container-nama1 {
+    width: 100%;
+    height: 40%;
+    background-color: #262626;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.container-sosmed1 {
+    width: 100%;
+    height: 20%;
+
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    top: 17px;
+
+    text-decoration: none;
+    list-style: none;
+
+}
+
+#icon1 {
+    color: #61CE70;
+    font-size: 20px;
+}
+
+.container-atas-kanan {
+    width: 17%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #161616;
+}
+
+/* ####### FAHMI ####### */
+.container-kiri-anggota2 {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+}
+
+.gambar-fahmi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -60px;
+
+}
+
+#fahmi {
+    border-radius: 50%;
+}
+
+.nama2 {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 17px;
+}
+
+.container-nama2 {
+    width: 100%;
+    height: 40%;
+    background-color: #262626;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.container-sosmed2 {
+    width: 100%;
+    height: 20%;
+
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    top: 17px;
+
+    text-decoration: none;
+    list-style: none;
+
+}
+
+#icon2 {
+    color: white;
+    font-size: 20px;
+}
+
+.container-atas-kanan {
+    width: 17%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #161616;
+}
+
+/* ####### AZKA ####### */
+.container-kiri-anggota3 {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+}
+
+.gambar-azka {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -60px;
+
+}
+
+#azka {
+    border-radius: 50%;
+}
+
+.nama3 {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 17px;
+}
+
+.container-nama3 {
+    width: 100%;
+    height: 40%;
+    background-color: #262626;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.container-sosmed3 {
+    width: 100%;
+    height: 20%;
+
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    top: 17px;
+
+    text-decoration: none;
+    list-style: none;
+
+}
+
+#icon3 {
+    color: white;
+    font-size: 20px;
+}
+
+.container-atas-kanan {
+    width: 17%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #161616;
+}
+
+/* -- -------------------- FOOTER -------------------- -- */
+footer {
+    width: 100%;
+    height: 40vh;
+    /* border: 2px solid #35f24e; */
+}
+
+.isiContentFooter {
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+}
+
+/* KIRI FOOTER */
+.kiriFooter {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #111;
+}
+
+/* TENGAH FOOTER */
+.tengahFooter {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #111;
+}
+
+/* Populer */
+.containerPopulerFooter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+    background-color: #111;
+    /* border: 1px solid #5eff00; */
+}
+
+.containerPopuler {
+    width: 100%;
+    height: 20%;
+    /* background-color: #295ef0; */
+    position: relative;
+    top: 45px;
+}
+
+.populer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+    color: white;
+}
+
+.pop1 {
+    width: 100%;
+    height: 250%;
+    /* background-color: rgb(87, 182, 87); */
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+}
+
+.pop2 {
+    width: 80%;
+    height: 100%;
+
+    color: white;
+    font-size: 12px;
+    /* background-color: blue; */
+}
+
+.populerPost {
+    list-style: none;
+}
+
+#p5 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    margin-bottom: 25px;
+}
+
+#p6 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    margin-bottom: 25px;
+}
+
+#p7 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    margin-bottom: 25px;
+}
+
+/* Contact */
+.containerContactFooter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #111;
+    /* border: 1px solid #ffffff; */
+}
+
+.containerContact {
+    width: 100%;
+    height: 20%;
+    /* background-color: #295ef0; */
+    position: relative;
+    top: 45px;
+}
+
+.contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+    color: white;
+}
+
+.con1 {
+    width: 100%;
+    height: 250%;
+    /* background-color: rgb(87, 182, 87); */
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+}
+
+.con2 {
+    width: 95%;
+    height: 100%;
+
+    color: white;
+    font-size: 12px;
+    /* background-color: blue; */
+}
+
+.contactA {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    /* border: 1px solid #ffffff; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contactB {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    /* border: 1px solid #ffffff; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contactC {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    /* border: 1px solid #ffffff; */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#p3 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    float: left;
+    left: 50px;
+    color: #7A7A7A;
+}
+
+#call {
+    font-size: 14px;
+    position: relative;
+    float: left;
+    left: 15px;
+    color: #bcbcbc;
+}
+
+#p4 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    position: relative;
+    float: left;
+    left: 50px;
+}
+
+#latter {
+    font-size: 14px;
+    position: relative;
+    float: left;
+    left: 15px;
+    color: #bcbcbc;
+    ;
+}
+
+#p45 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #7A7A7A;
+    position: relative;
+    float: left;
+    left: 50px;
+}
+
+#clock {
+    font-size: 14px;
+    position: relative;
+    float: left;
+    left: 15px;
+    color: #bcbcbc;
+    ;
+}
+
+
+/* About */
+.containerAboutFooter {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+    left: 0%;
+    background-color: #111;
+    /* border: 1px solid #ff2e2e; */
+}
+
+.containerWhy {
+    width: 100%;
+    height: 20%;
+    /* background-color: #295ef0; */
+    position: relative;
+    top: 45px;
+}
+
+.why {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, sans-serif;
+    color: white;
+}
+
+.why1 {
+    width: 100%;
+    height: 250%;
+    /* background-color: rgb(87, 182, 87); */
+    position: relative;
+    top: -35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+}
+
+.why2 {
+    width: 80%;
+    height: 100%;
+
+    color: #7A7A7A;
+    font-size: 12px;
+    /* background-color: blue; */
+}
+
+#p1 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#p2 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* LOGO FOOTER */
+.containerLogoFooter {
+    width: 24%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    left: 75.5%;
+    background-color: #111;
+    /* border: 1px solid #0602ff; */
+}
+
+.logFot {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 75px
+}
+
+/* KANAN FOOTER */
+.kananFooter {
+    width: 15%;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-color: #111;
+}
+
+.isiSosmedFooter {
+    width: 100%;
+    height: 15%;
+    /* background-color: #0e0e0e; */
+    /* border: 2px solid #ffffff; */
+}
+
+/* ########### SOSMED ########### */
+
+/* Kiri Footer */
+.containerKiriSosmedFooter {
+    width: 35%;
+    height: 100%;
+    background-color: #0e0e0e;
+    position: relative;
+    float: left;
+}
+
+/* Tengah Footer*/
+.containerTengahSosmedFooter {
+    width: 30%;
+    height: 100%;
+    background-color: #0e0e0e;
+    position: relative;
+    float: left;
+    left: 0%;
+}
+
+.sosmedDalam {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid rgb(0, 238, 255); */
+}
+
+.sosmed {
+    display: flex;
+    width: 100%;
+    height: 5.5vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Font */
+    letter-spacing: 24px;
+    font-size: 19px;
+    color: white;
+    list-style: none;
+    left: 18px;
+}
+
+/* Kanan Footer*/
+.containerKananSosmedFooter {
+    width: 35%;
+    height: 100%;
+    background-color: #0e0e0e;
+    position: relative;
+    float: right;
+}
+
+#aa,
+#bb,
+#cc,
+#dd {
+    color: white;
+}
