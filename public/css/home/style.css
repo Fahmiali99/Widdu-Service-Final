@@ -1579,3 +1579,218 @@ footer {
 #dd {
     color: white;
 }
+
+@media screen and (max-width: 576px) {
+    .containerBaner {
+        width: 100%;
+        height: 12%;
+    }
+
+    .kataFreelance {
+        display: flex;
+        justify-content: center;
+
+        font-size: 30%;
+    }
+
+    .kataJudul {
+
+        display: flex;
+        justify-content: center;
+
+        font-size: 100%;
+    }
+
+    .containerButton {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .kirivis {
+        display: flex;
+        justify-content: center;
+    }
+
+    .containerVisiMisi {
+        width: 35%;
+
+        display: flex;
+        justify-content: center;
+
+        top: -50px;
+    }
+
+    #visiMisi {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+
+        font-size: 70%;
+    }
+
+    .atasjasa {}
+
+    .containerJudulJasa {
+        font-size: 95%;
+    }
+
+    .containerJasa {
+        height: 20%;
+    }
+
+    .kiriJasa {
+        height: 5%;
+    }
+
+    .tengahJasakiriJasa {}
+
+    .containerJasaKiri {
+        width: 100%;
+        height: 30%;
+    }
+
+    .kananJasa {}
+
+    .containerJasaKiriLingkaran {
+        width: 50%;
+    }
+
+    #coding {
+        font-size: 100%;
+        top: 91px;
+    }
+
+    .containerJasaTengah {
+        position: relative;
+        top: 50px;
+
+        width: 100%;
+        height: 30%;
+    }
+
+    #vektoring {
+        font-size: 100%;
+        top: 91px;
+    }
+
+    .containerJasaKanan {
+
+        position: relative;
+        top: 100px;
+
+        width: 100%;
+        height: 30%;
+    }
+
+    #musician {
+        font-size: 100%;
+        top: 91px;
+    }
+
+    .darkpart1 {
+        font-size: 100%;
+        display: flex;
+    }
+
+    .gambarIklan2 {
+        font-size: 15px;
+    }
+
+    .tengahJobA {
+        width: 100%;
+
+        position: relative;
+        top: -100%;
+    }
+
+    .kiriJobB {
+        height: 0%;
+    }
+
+    .judulA {
+        font-size: 12px;
+    }
+
+    .judulB1 {
+        font-size: 12px;
+    }
+
+    .judulC1 {
+        font-size: 12px;
+    }
+
+    .tengahJobB {
+        width: 100%;
+        position: relative;
+        top: -100%;
+    }
+
+    .judulB {
+        font-size: 12px;
+    }
+
+    .judulC1 {
+        font-size: 12px;
+    }
+
+    .judulD1 {
+        font-size: 12px;
+    }
+
+    .partnerjudul {
+        font-size: 100%;
+
+        position: relative;
+
+        top: -50%;
+        height: 100px;
+    }
+
+    .container-gambar-partner2 {
+        width: 100%;
+
+        top: -40%;
+    }
+
+
+    .gambar-partner2 {
+        position: relative;
+        top: -100%;
+
+    }
+
+    .container-gambar-partner1 {
+        width: 100%;
+
+        top: -110%;
+    }
+
+    .gambar-partner1 {
+        width: 100%;
+
+        height: 30%;
+
+        position: relative;
+        top: 100%;
+    }
+
+    .container-gambar-partner3 {
+        width: 100%;
+
+        top: -120%;
+    }
+
+    .containerpartner {
+        height: 150%;
+    }
+
+
+
+
+
+}

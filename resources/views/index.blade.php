@@ -250,7 +250,7 @@
             <div class="container-gambar-partner2">
                 <div class="gambar-partner2">
                     <img id="ruang-beban" src="img/home/ruang-beban.jpg" alt="" style="
-                            max-width: 40%;
+                            max-width: 126%;
                             height: 40%;
                             width: 100;
                             height: 100;
