@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admins;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 class UserSeeder extends Seeder
@@ -18,6 +19,6 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'password' => 'admin123',
         ];
-        $insert = User::create($user);
+        $insert = Admins::create($user);
     }
 }
