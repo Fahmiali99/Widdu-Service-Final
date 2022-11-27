@@ -35,10 +35,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        <div class="container mt-5">
-            Selamat datang {{Auth::guard('admin')->user()->name}}
-            <a href="{{route('auth.logout')}}">Logout</a>
-        </div>
+
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Right navbar links -->
@@ -115,15 +112,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('news.index') }}"
-                                class="nav-link {{Request::is('news') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-shopping-basket"></i>
-                                <p>
-                                    News
-                                </p>
-                            </a>
-                        </li>
+
 
                         <li class="nav-item">
                             <a href="{{ route('codings.index') }}"
@@ -156,6 +145,9 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="d-flex mb-10 mx-4 mt-5 pt-5">
+                    <a class="btn btn-danger" href="{{route('auth.logout')}}">Logout</a>
+                </div>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

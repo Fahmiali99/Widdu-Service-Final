@@ -103,10 +103,10 @@
 
 <!-- Iklan 3 Job atas -->
 <section id=jobA>
-    <div class="iklanA">
+    <div class="iklanA ">
         <div class="kiriJobA"></div>
 
-        <div class="tengahJobA">
+        <div class="tengahJobA ">
             <div class="container-kiri-jobA">
                 <div class="logo1">
                     <img id="logo1" src="img/home/komunikasi.jpg" alt="" style="

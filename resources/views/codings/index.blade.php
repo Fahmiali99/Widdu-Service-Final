@@ -20,7 +20,7 @@
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
-<div class="container mt-5">
+<div class="container col-sm-10 mt-5">
     @if (session('success'))
     <div class="alert alert-success" role="alert">
         {{session('success')}}
@@ -31,35 +31,43 @@
 <div class="container-table">
     <table class="table">
         <div class="text-center">
-            <h1 class="text-bold">CODING</h1>
+            <h2 class="text-bold">CODING</h2>
         </div>
-        <thead>
-            <th>#</th>
-            <th>Nama</th>
-            <th>Telpon / Wa</th>
-            <th>Email</th>
-            <th>Problem</th>
-        </thead>
+        <div>
+            <thead>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Telpon / Wa</th>
+                <th>Email</th>
+                <th>Problem</th>
+                <th>Action</th>
+            </thead>
 
-        @foreach($codings as $data)
-        <tr>
-            <td>{{$data->name}}</td>
-            <td>{{$data->telp}}</td>
-            <td>{{$data->email}}</td>
-            <td>{{$data->problem}}</td>
-            <td>
-                <a href="{{route('codings.edit', $data->id)}}" class="btn btn-warning">Edit</a>
-                <form method="POST" action="{{ route('codings.destroy', [$data->id]) }}">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-        <tbody>
+            @foreach($codings as $data)
+            <tr class="flex justify-content-center">
+                <td>{{$data->id}}</td>
+                <td>{{$data->name}}</td>
+                <td>{{$data->telp}}</td>
+                <td>{{$data->email}}</td>
+                <td>{{$data->problem}}</td>
+                <td class="d-flex">
+                    <div>
+                        <a href="{{route('codings.edit', $data->id)}}" class="btn btn-warning mx-2">Edit</a>
+                    </div>
+                    <div>
+                        <form method="POST" action="{{ route('codings.destroy', [$data->id]) }}">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
 
-        </tbody>
+            <tbody>
+
+            </tbody>
     </table>
 </div>
 

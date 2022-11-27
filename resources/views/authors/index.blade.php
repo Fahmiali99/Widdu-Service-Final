@@ -31,10 +31,10 @@
 <div class="container-table">
     <table class="table">
         <div class="text-center">
-            <h1 class="text-bold">LIST ADMIN</h1>
+            <h2 class="text-bold">LIST ADMIN</h2>
         </div>
         <thead>
-            <th>#</th>
+            <th>No</th>
             <th>Name</th>
             <th>Username</th>
             <th>Password</th>
@@ -48,13 +48,15 @@
                 <td>{{$data->name}}</td>
                 <td>{{$data->username}}</td>
                 <td>{{$data->password}}</td>
-                <td>
-                    <a href="{{route('authors.edit', $data->id)}}" class="btn btn-warning">Edit</a>
-                    <form method="POST" action="{{ route('authors.destroy', [$data->id]) }}">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                <td class="d-flex">
+                    <div><a href="{{route('authors.edit', $data->id)}}" class="btn btn-warning mx-2">Edit</a></div>
+                    <div>
+                        <form method="POST" action="{{ route('authors.destroy', [$data->id]) }}">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             @endforeach
