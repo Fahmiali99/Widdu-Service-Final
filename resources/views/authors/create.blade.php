@@ -17,7 +17,7 @@
             <label for="">Password</label>
             <input class="form-control" type="password" name="password" id="" required>
         </div>
-        <a href="{{route('authors.index')}}">BACK</a>
+        <a class=" btn btn-warning" href="{{route('authors.index')}}">BACK</a>
         <button class="btn btn-success" type="submit">Submit</button>
     </form>
 </div>

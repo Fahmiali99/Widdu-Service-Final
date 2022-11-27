@@ -21,7 +21,7 @@
             <label for="">Problem</label>
             <input class="form-control" type="text" name="problem" id="" required>
         </div>
-        <a href="{{route('vektors.index')}}">BACK</a>
+        <a class="btn btn-warning" href="{{route('vektors.index')}}">BACK</a>
         <button class="btn btn-success" type="submit">Submit</button>
     </form>
 </div>
